@@ -8,7 +8,7 @@ https://github.com/kemalaydin99/marketprice
 - This exercise implements a MessageListener, CSVParser, and REST API endpoints. You can find more detail below about
   the task.
 
--To Run PredictionApplication
+-To Run MarketPrice Application
 ---
 
 ```
@@ -17,18 +17,10 @@ https://github.com/kemalaydin99/marketprice
 
 2- While application is running at command line window you can run the following link on a browser to get response from REST API:
 	
-	* List subscriptions: 
-	  http://localhost:8080/subscriptions
-	* Get predictions for stock ticker and future time frame: 
-	  http://localhost:8080/predictions
-
-	At first time a login page will be shown to user to authorise login credentials.
-	
-.        username = user
-=======================================
-.        password = password
-----------------
-
+	* Get Latest Market Price for Instruments: 
+	  http://localhost:8080/marketprice/instruments/GBP%2FUSD
+	* Post market price as a message string: 
+	  http://localhost:8080/marketprice/message/106, EUR/USD, 1.1000,1.2000,01-06-2020 12:01:01:001
 ```  
 
 To Run Tests
@@ -38,6 +30,7 @@ To Run Tests
 Commandline {project dir}> mvn test  
 ``` 
 
+## TASK DEFINITION ##
 ````
   We would like to connect to a FX price feed of spot prices from the market. With each price, we want to modify it by applying a margin adjustment to each price (like commission).
   With the new price, we then want to make this available to clients/components so they can get the latest price for an instrument whenever they ask for it (history is not required).
